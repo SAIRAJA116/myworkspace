@@ -1,0 +1,12 @@
+{% extends "flights/layout.html" %}
+
+{% block body %}
+    <h1>List of flights. </h1>
+    <ul>
+    {% for i in flights %}
+        <li><h3>{{ i }}   <a href="{% url 'flights' i.id %}"><button>GO</button></a></h3></li> 
+        {% empty %}
+        <h3>No flights are available right now</h3> 
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'Student/navbar.html' %}
+
+{% block title %}
+Student Registration
+{% endblock %}
+
+{% block body%}
+<div class="container">
+	<center><h2 class="bg bg-primary">edit {{data.First_name}} registration page</h2></center>
+	<form action="{% url 'edit' data.id %} " method="POST">
+		{% csrf_token %}
+		Firstname : <input class="form-control" type="text" name="fname" value="{{data.First_name}}"><br><br>
+		Lastname : <input class="form-control" type="text" name="lname" value="{{data.Last_name}}"><br><br>
+		Age : <input class="form-control" type="integer" name="age" value="{{data.Age}}"><br><br>
+		<label>branch</label>
+		<select name="branch">
+			<option>{{data.branch}}</option>
+			<option>CSE</option>
+			<option>ECE</option>
+			<option>CIVIL</option>
+			<option>MECH</option>
+			<option>EEE</option>
+		</select><br><br>
+		Email : <input class="form-control" type="text" name="email" value='{{data.Email}}'><br><br>
+		<input class="form-control btn-success btn" type="submit" name="update"><br><br>
+	</form>
+</div>
+
+
+{% endblock %}

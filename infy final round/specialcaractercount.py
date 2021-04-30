@@ -1,0 +1,25 @@
+s=input()
+e=[]
+o=[]
+c=0
+for i in s:
+    if(i.isdigit()):
+        if(int(i)%2==0):
+            e.append(int(i))
+        else:
+            o.append(int(i))
+    elif(i.isalnum()==False):
+        c+=1
+res=list()
+i=0
+if(c%2==0):
+    while(i!=len(e)):
+        res.append(e[i])
+        res.append(o[i])
+        i=i+1
+else:
+    while(i!=len(o)):
+        res.append(o[i])
+        res.append(e[i])
+        i=i+1
+print(res)

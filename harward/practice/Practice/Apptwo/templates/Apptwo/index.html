@@ -1,0 +1,23 @@
+{% extends "Apptwo/layout.html" %}
+
+{% block body %}
+    <h1>Student list </h1>
+    <ol>
+        {% for i in data %}
+            <li>
+                <ul>
+                    <li>Name : {{i.name}}</li>
+                    <li>Roll : {{i.rollNo}}</li>
+                    <li>Percentage : {{i.percentage}}</li>
+                </ul>
+            </li>
+            <br><br>
+            {% empty %}
+            <h3>There are no students</h3>
+        {% endfor %}
+    </ol>
+{% endblock %}
+
+{% block abc %}
+    <h1>Fuckoff!</h1>
+{% endblock %}

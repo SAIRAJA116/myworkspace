@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>forget password</title>
+</head>
+<body>
+	<form action="{%url 'forgetpwd' %}" method="POST">
+		{% csrf_token %}
+		Email : <input type="email" name="email"><br><br>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <a href="{% url 'adminpannel' %}">go to admin pannel</a>
+    <a href="{% url 'logout' %}">logout</a>
+    <h1>{{request.user}}</h1>
+   <h1>Todo</h1>
+
+
+   <form  method="POST"  action="{% url 'add' %}">
+       {% csrf_token %}
+        addtask : <input name="task" type="text"><br>
+        <input type='submit' name='submit'>
+   </form>
+
+   
+   <ul>
+        {% for i in task %}
+            <li><p>{{i}}</p><button><a style="color:black;" href="{% url 'delete' i.id %}">completed</a></button></li>
+        {% endfor %}
+   </ul>
+
+</body>
+</html>

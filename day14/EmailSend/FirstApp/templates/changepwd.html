@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chagepassword</title>
+</head>
+<body>
+	<form action="{% url 'changepwd' %}" method="POST">
+		{% csrf_token %}
+		oldpassword : <input type="text" name="oldpass"><br><br>
+		newpassword : <input type="text" name="newpass"><br><br>
+		conformpassword: <input type="text" name="conpass">
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

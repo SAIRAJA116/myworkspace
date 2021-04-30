@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>register</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+
+
+	<div class="container">
+
+		<div class="card">
+
+
+			<div class="card-header">
+				<h1>Registration page</h1>
+			</div>
+			<div class="card-body">
+				<form action="{% url 'register' %}" method="POST" >
+				{% csrf_token %}
+					FirstName : <input type="text" name="fname"><br><br>
+					LastName : <input type="text" name="lname"><br><br>
+					Username : <input type="text" name="username"><br><br>
+					EmailId : <input type="email" name="email"><br><br>
+					Date Of Birth : <input type="date" name="dob"><br><br>
+			</div>
+			<div class="card-footer bg-dark">
+				<input type="submit" name="submit">
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+
+<!--FirstName : <input type="text" name="fname"><br><br>
+		LastName : <input type="text" name="lname"><br><br>
+		Username : <input type="text" name="username"><br><br>
+		EmailId : <input type="email" name="email"><br><br>
+		Date Of Birth : <input type="date" name="dob"><br><br>
+	-->

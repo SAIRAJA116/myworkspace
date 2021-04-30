@@ -1,0 +1,29 @@
+{% extends 'Faculty/navbar.html' %}
+
+{% block title %}
+Faculty Registration
+{% endblock %}
+
+{% block body%}
+<div class="container">
+	<h2 class="bg bf-sucess">student registration page</h2>
+	<form action="{% url 'registerf' %} " method="POST">
+		{% csrf_token %}
+		Name : <input class="form-control" type="text" name="name" ><br><br>
+		Qualification : <input class="form-control" type="text" name="qua"><br><br>
+		<label>branch</label>
+		<select name="branch">
+			<option>ECE</option>
+			<option>CSE</option>
+			<option>CIVIL</option>
+			<option>ME</option>
+			<option>IT</option>
+		</select><br><br>
+		Email : <input class="form-control" type="text" name="email"><br><br>
+		Phone nunber:<input type="text" name="phone"><br><br>
+		<input class="form-control bg-primary" type="submit" name="submit"><br><br>
+	</form>
+</div>
+
+
+{% endblock %}

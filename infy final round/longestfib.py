@@ -1,0 +1,23 @@
+l=input().split(',')
+l=list(map(int,l))
+fib=[]
+longest=0
+j=1
+window=l[0:j+1]
+while(j<len(l)-1):
+    if(l[j-1]+l[j]==l[j+1]):
+        window.append(l[j+1])
+        if(longest<len(window)):
+            longest=len(window)
+        j=j+1
+    else:
+        if(len(window)>2):
+            fib.append(window)
+        window=l[j:j+2]
+        j=j+1
+if(len(window)>2):
+    fib.append(window)
+for i in fib:
+    if(len(i)==longest):
+        print(i)
+        break
